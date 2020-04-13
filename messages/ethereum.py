@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 from pycoingecko import CoinGeckoAPI
 
 # list of coins https://api.coingecko.com/api/v3/coins/list
