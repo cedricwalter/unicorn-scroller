@@ -5,4 +5,4 @@ from pycoingecko import CoinGeckoAPI
 price = CoinGeckoAPI().get_price(ids='bitcoin', vs_currencies='usd')
 
 print 'colour:yellow'
-print 'BTC $%s' % (price['bitcoin']['usd'])
+print 'text:BTC $%s' % (price['bitcoin']['usd'])
