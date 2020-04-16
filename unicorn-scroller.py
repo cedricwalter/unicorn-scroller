@@ -38,7 +38,7 @@ font_offset = -2
 
 # Pause between steps in seconds, defines the scroll speed
 # Too fast and you can't read it, or can you?
-step = 0.05
+step = 0.09
 
 # Background colour
 back='black'
@@ -122,6 +122,7 @@ def process_line(l):
   global colour
   items = []
   global estimate_brightness
+  global step
   m = re.match(r'^colou?r: *(.+) *$', l)
   if (m):
     try:
@@ -155,6 +156,11 @@ def process_line(l):
     set_brightness(int(m.group(1)))
     # Disable brightness estimation if measured
     estimate_brightness = 0
+    return
+
+  m = re.match(r'^step: *(\d+) *$', l)
+  if (m):
+    step = float(m.group(1))
     return
 
 def process_message(f):

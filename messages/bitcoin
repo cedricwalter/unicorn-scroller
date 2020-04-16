@@ -4,6 +4,11 @@ from pycoingecko import CoinGeckoAPI
 # list of coins https://api.coingecko.com/api/v3/coins/list
 price = CoinGeckoAPI().get_price(ids='bitcoin', vs_currencies='usd')
 
+# slow down scrolling
 print 'step:%d' % (0.09)
+
 print 'colour:yellow'
 print 'text:BTC $%s' % (price['bitcoin']['usd'])
+
+# set back to default value
+print 'step:%d' % (0.05)
